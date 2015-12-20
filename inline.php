@@ -1,6 +1,6 @@
 <?php
 
-define('PHP_PERFORMANCE_DEMO_RUNCOUNT', 10000000);
+require __DIR__ . '/benchmark.php';
 
 class ConcaterRedundant{
 	public function concat(){
@@ -84,12 +84,6 @@ class ConcaterConstructParamDeclaredPublic{
 
 		return $this->a . $this->b;
 	}
-}
-
-function benchmark_case($case, $text){
-	$start = microtime(true);
-	call_user_func($case);
-	printf($text, microtime(true) - $start);
 }
 
 function maybe_inline(){
